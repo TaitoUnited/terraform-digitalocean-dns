@@ -16,7 +16,7 @@
 
 resource "digitalocean_domain" "default" {
   for_each   = {for item in local.dnsZones: item.name => item}
-  dns_name   = each.value.dnsName
+  name       = each.value.dnsName
 }
 
 
